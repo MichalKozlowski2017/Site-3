@@ -1,0 +1,54 @@
+.my-account {
+  background-image: url(#{$images_dir}niebo_gora.png);
+  background-repeat: repeat-x;
+  background-color: $color-section;
+
+  .content-container {
+    padding: 85px 20px;
+
+    &__wrapper {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+
+      @include mq($min-width: 768px) {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+      }
+    }
+  }
+
+  .content-box {
+    margin: 0;
+
+    &:first-child {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+
+    &:last-child {
+      margin-left: 0;
+      margin-top: 0;
+    }
+
+    @include mq($min-width: 768px) {
+      margin: 0;
+
+      &:first-child {
+        margin-right: 5px;
+        margin-bottom: 0;
+      }
+
+      &:last-child {
+        margin-left: 5px;
+        margin-top: 0;
+      }
+    }
+  }
+}

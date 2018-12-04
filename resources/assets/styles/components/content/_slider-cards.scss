@@ -1,0 +1,153 @@
+.slider-cards {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  .content-container {
+    padding: 85px 20px;
+    position: relative;
+  }
+}
+
+.slider-cards-wrapper {
+  position: relative;
+  max-width: 470px;
+  z-index: 6;
+
+  .slick-dots {
+    position: absolute;
+    bottom: 40px;
+
+    @include mq($min-width: 575px) {
+      bottom: 54px;
+      left: 82px;
+    }
+
+    li {
+      width: 5px;
+      height: 5px;
+
+      button {
+        width: 5px;
+        height: 5px;
+
+        &::before {
+          font-size: 10px;
+          width: 5px;
+          height: 5px;
+        }
+      }
+    }
+  }
+
+  .slider-cards-next {
+    right: 20px;
+  }
+
+  .slider-cards-prev {
+    left: 20px;
+  }
+
+  @include mq($min-width: 575px) {
+    .slider-cards-next {
+      right: 30px;
+    }
+
+    .slider-cards-prev {
+      left: 200px;
+    }
+  }
+
+  .slider-cards-next,
+  .slider-cards-prev {
+    position: absolute;
+    bottom: 20px;
+    z-index: 5;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #d1d7dc;
+
+    @include mq($min-width: 575px) {
+      bottom: 30px;
+    }
+
+    i {
+      color: #000;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%);
+      line-height: 0;
+      font-size: 20px;
+    }
+  }
+}
+
+.slider-cards-card {
+  background-color: $color-white;
+  padding: 30px;
+  border-radius: 25px;
+  position: relative;
+  left: 0;
+  max-width: 400px;
+  width: auto !important;
+  padding-bottom: 80px;
+  z-index: 4;
+
+  @include mq($min-width: 575px) {
+    padding-bottom: 30px;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    h2 {
+      font-size: 26px;
+      font-family: $regular;
+      text-transform: uppercase;
+
+      b {
+        font-family: $bold;
+        color: $color-blue;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 54px;
+      height: 41px;
+      background-image: url(#{$images_dir}quote.png);
+      background-size: 54px 41px;
+      position: absolute;
+      top: -20px;
+      left: 0;
+    }
+  }
+
+  &__footer {
+    text-align: center;
+
+    @include mq($min-width: 575px) {
+      text-align: left;
+    }
+  }
+}
+
+.slider-cards-backslide-1 {
+  position: absolute;
+  width: 470px;
+  top: 80px;
+  left: 50px;
+  height: 315px;
+  background-color: red;
+  border-radius: 25px;
+  opacity: 0.8;
+}

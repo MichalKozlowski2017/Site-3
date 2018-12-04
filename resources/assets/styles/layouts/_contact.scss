@@ -1,0 +1,120 @@
+.contact {
+  background-image: url(#{$images_dir}niebo_gora.png);
+  padding: 110px 20px;
+}
+
+.contact-wrapper {
+  &__top-upper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    border-bottom: 1px solid $color-lightgray;
+  }
+
+  &__top-bottom {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    @include mq($min-width: 768px) {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -ms-flex-pack: distribute;
+      justify-content: space-around;
+
+      .contact-item {
+        width: 33%;
+        border-bottom: none;
+      }
+    }
+  }
+
+  .contact-item {
+    text-align: center;
+    position: relative;
+    border-bottom: 1px solid $color-lightgray;
+
+    &:first-child {
+      &::before {
+        display: none;
+      }
+    }
+
+    @include mq($min-width: 768px) {
+      border-bottom: none;
+
+      &::before {
+        content: '';
+        width: 1px;
+        height: 100%;
+        background-color: $color-lightgray;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+
+    &:nth-child(3) {
+      border-bottom: none;
+    }
+
+    h2 {
+      text-transform: uppercase;
+      font-size: 18px;
+      font-family: $bold;
+      margin-bottom: 40px;
+      margin-top: 40px;
+    }
+
+    p {
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+  }
+}
+
+.contact-map {
+  background-image: url(#{$images_dir}map.jpg);
+  background-position: center center;
+  height: 430px;
+  position: relative;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+.content-map-info {
+  background-color: $color-white;
+  position: absolute;
+  padding: 20px 20px 20px 20px;
+  border-radius: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+
+  @include mq($min-width:768px) {
+    max-width: 315px;
+    left: 40px;
+    transform: translate(0, -50%);
+  }
+
+  div {
+    text-align: center;
+    border-bottom: none !important;
+
+    @include mq($min-width:768px) {
+      text-align: left !important;
+    }
+  }
+}

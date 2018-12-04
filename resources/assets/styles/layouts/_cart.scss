@@ -1,0 +1,386 @@
+.cart-wrapper {
+  background-image: url(#{$images_dir}niebo_gora.png);
+  position: relative;
+  color: $color-darkblue;
+  font-size: 14px;
+  table { border-collapse: separate; }
+
+  .content-box {
+    border-radius: 18px;
+  }
+
+  &__flex-container {
+    display: flex;
+    flex-direction: column;
+
+    @include mq($min-width: 992px) {
+      flex-direction: row;
+    }
+  }
+
+  &__main {
+    @include mq($min-width: 992px) {
+      width: calc((100% * (7 / 10) - 5px));
+      margin-right: 10px;
+    }
+  }
+
+  &__sidebar {
+    margin-top: 20px;
+
+    @include mq($min-width: 992px) {
+      width: calc((100% * (3 / 10) - 5px));
+      margin-top: 0;
+    }
+  }
+
+  .content-box:nth-child(n+2) {
+    margin-top: 20px;
+
+    @include mq($min-width: 992px) {
+      margin-top: 10px;
+    }
+  }
+
+  .content-container {
+    padding: 85px 20px;
+  }
+}
+
+.cart-voucher {
+  position: relative;
+
+  &__fake-checkbox {
+    display: none;
+  }
+
+  &__input {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    flex-direction: column;
+
+    @include mq($min-width: 575px) {
+      flex-direction: row;
+    }
+
+    & > input {
+      width: 90%;
+      padding: 10px 15px;
+      border: 1px solid $color-borders;
+
+      @include mq($min-width: 575px) {
+        width: 60%;
+      }
+    }
+
+    button {
+      margin-top: 10px;
+      white-space: nowrap;
+
+      @include mq($min-width: 575px) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__expand-btn {
+    display: block;
+    text-decoration: none;
+    color: $color-darkblue;
+    position: absolute;
+    top: 28px;
+    right: 40px;
+    font-size: 36px;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.2s;
+
+    @include mq($min-width: 992px) {
+      top: 20px;
+    }
+  }
+
+  &__text {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -15px;
+
+    @include mq($min-width: 768px) {
+      left: 40px;
+    }
+
+    & > p {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  &__fake-checkbox:checked {
+    & ~ .cart-voucher__expand-btn {
+      transform: rotate(45deg);
+    }
+
+    & ~ .cart-voucher__input {
+      max-height: 120px;
+      transition: 0.2s;
+      margin: 40px 0 10px;
+    }
+
+    & ~ .cart-voucher__input > .cart-voucher__text {
+      display: inline-block;
+    }
+  }
+
+  h1 {
+    margin-bottom: 0;
+  }
+}
+
+.cart-summary {
+  &__breakdown {
+    border-bottom: 1px solid $color-borders;
+    margin: 0 -45px;
+    padding: 0 45px 30px;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+
+    & > span:last-child {
+      font-family: $medium;
+    }
+  }
+
+  &__total {
+    padding-top: 30px;
+    text-align: center;
+
+    & > a > button {
+      margin-top: 30px;
+      white-space: nowrap;
+    }
+  }
+}
+
+.cart-delivery {
+  padding-left: 40px;
+
+  &__address {
+    margin-top: 20px;
+  }
+
+  &__opening-times {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  p {
+    line-height: 20px;
+  }
+}
+
+.delivery-option {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid $color-borders;
+
+  &--nologo {
+    justify-content: flex-start;
+  }
+
+  &__default-input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  &__styled-input {
+    position: absolute;
+    top: 8px;
+    left: -50px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid $color-borders;
+
+    @include mq($min-width: 992px) {
+      left: -60px;
+    }
+
+    &::after { // create lil blue dot
+      content: '';
+      display: none;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: $color-blue2;
+    }
+  }
+
+  &__default-input:checked ~ .delivery-option__styled-input::after { // display lil blue dot if checked
+    display: block;
+  }
+
+  &__name {
+    font-family: $medium;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid $color-borders;
+  position: relative;
+  flex-direction: column;
+  margin-top: 20px;
+
+  @include mq($min-width: 575px) {
+    flex-direction: row;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: $color-darkblue;
+  }
+
+  &__image {
+    display: flex;
+    align-items: center;
+    width: 35%;
+
+    @include mq($min-width: 575px) {
+      width: 25%;
+    }
+
+    &--option-below {
+      justify-content: center;
+      width: auto;
+      position: relative;
+
+      & > img:last-child {
+        position: absolute;
+        bottom: -30px;
+        left: 50%;
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__text {
+    width: 50%;
+
+    @include mq($min-width: 575px) {
+      width: 50%;
+    }
+
+    & > p:last-child {
+      font-family: $medium;
+    }
+  }
+
+  &__remove {
+    width: auto;
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &:hover {
+      background: none !important;
+    }
+
+    & > a {
+      font-size: 24px;
+      color: $color-borders;
+    }
+  }
+
+  .product-quantity {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .product-remove:hover {
+    background: none !important;
+  }
+}
+
+.cart-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  & > li:last-child > .delivery-option {
+    border-bottom: none;
+  }
+}
+
+.cart-payment-methods {
+  &__list {
+    display: flex;
+    justify-content: center;
+
+    @include mq($min-width: 768px) {
+      justify-content: flex-start;
+    }
+
+    & > * {
+      margin-right: 10px;
+    }
+  }
+}
+
+.cart-suggestions {
+  .store-main {
+    display: flex;
+
+    .store-item {
+      border-right: none;
+      height: auto;
+      padding: 0 5px;
+
+      p {
+        margin-bottom: 0 !important;
+      }
+
+      &__title {
+        margin-bottom: 10px;
+      }
+
+      &__price {
+        line-height: 1;
+        margin-top: 0;
+        margin-bottom: 5px;
+
+        p {
+          font-family: $bold;
+        }
+      }
+    }
+  }
+}

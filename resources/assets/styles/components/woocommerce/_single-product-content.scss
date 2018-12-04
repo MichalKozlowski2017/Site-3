@@ -1,0 +1,235 @@
+.single-product-content {
+  display: block;
+  background-color: #f5faff;
+}
+
+.single-product-content-section {
+  display: none;
+
+  &--active {
+    display: block;
+  }
+}
+
+.single-product-content-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+  border-top: 1px solid $color-hairline;
+  border-bottom: 1px solid $color-hairline;
+
+  &__button {
+    position: relative;
+    border-right: 1px solid $color-hairline;
+    text-align: center;
+    width: 100%;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    cursor: pointer;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    p {
+      position: relative;
+      padding: 25px 0;
+      line-height: 1;
+      font-family: $medium;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      opacity: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: $color-yellow;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+    }
+
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &--active {
+      background-color: $color-yellow;
+
+      &:hover {
+        background-color: $color-yellow;
+      }
+    }
+  }
+}
+
+.single-product-content-wrapper {
+  padding: 40px 20px;
+
+  @include mq($min-width: 992px) {
+    padding: 40px 90px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 15px;
+  }
+
+  h6 {
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 15px;
+    font-family: $regular;
+    font-weight: normal;
+    position: relative;
+    margin-top: 65px;
+
+    &::after {
+      content: '';
+      background-image: url(#{$images_dir}info.png);
+      width: 30px;
+      height: 30px;
+      background-size: 30px 30px;
+      position: absolute;
+      left: 0;
+      top: -40px;
+    }
+
+    @include mq($min-width: 992px) {
+      margin-top: 0;
+
+      &::after {
+        left: -40px;
+        top: 0;
+        width: 25px;
+        height: 25px;
+        background-size: 25px 25px;
+      }
+    }
+  }
+
+  ol {
+    list-style: none;
+    counter-reset: my-awesome-counter;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 0;
+
+    @include mq($min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+
+  ol li {
+    counter-increment: my-awesome-counter;
+    position: relative;
+    width: 190px;
+    font-size: 14px;
+    line-height: 24px;
+    margin: 60px 0 50px 0;
+
+    &:first-child {
+      margin-top: 120px;
+    }
+
+    @include mq($min-width: 768px) {
+      margin: 120px 40px 50px 0;
+    }
+  }
+
+  ol li::before {
+    content: counter(my-awesome-counter);
+    font-size: 14px;
+    font-family: $medium;
+    position: absolute;
+
+    --size: 50px;
+
+    left: 0;
+    line-height: var(--size);
+    width: var(--size);
+    height: var(--size);
+    top: -70px;
+    background: #e6f2fc;
+    border-radius: 50%;
+    text-align: center;
+  }
+
+  table {
+    width: 100%;
+    font-size: 12px;
+    position: relative;
+    border: 0;
+    border-collapse: separate;
+    border-spacing: 0 5px;
+    margin-bottom: 30px;
+    vertical-align: top;
+
+    @include mq($min-width: 480px) {
+      font-size: 14px;
+    }
+
+    thead {
+      text-align: left;
+      position: relative;
+
+      th {
+        font-weight: normal !important;
+        font-family: $regular;
+        padding: 15px 0 15px 0;
+        border-bottom: 1px solid $color-hairline;
+        border-collapse: separate;
+        border-spacing: 5px 5px;
+      }
+    }
+
+    tbody {
+      text-align: left;
+      margin-top: 30px;
+
+      tr {
+        td {
+          vertical-align: top;
+        }
+
+        &:first-child {
+          td {
+            border-collapse: separate;
+            border-spacing: 5px 5px;
+            padding-top: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+div.single-product-opinion {
+  border-top: 1px solid $color-hairline;
+  margin-bottom: 20px;
+  padding-top: 20px;
+
+  &:first-child {
+    border-top: 0;
+  }
+
+  &__stars {
+    margin-bottom: 10px;
+
+    i {
+      color: $color-yellow;
+    }
+  }
+}

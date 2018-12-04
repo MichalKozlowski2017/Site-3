@@ -1,0 +1,40 @@
+.register-form {
+  background-image: url(#{$images_dir}niebo_gora.png);
+  background-repeat: repeat-x;
+  background-color: $color-section;
+
+  .content-container {
+    padding: 85px 20px;
+
+    .content-box {
+      form {
+        .form-section {
+          display: flex;
+          flex-direction: column;
+
+          .form-column {
+            width: 100%;
+            padding: 0;
+          }
+
+          @include mq($min-width: 992px) {
+            flex-direction: row;
+
+            .form-column {
+              width: 33%;
+              padding: 0 5px;
+
+              &:first-child {
+                padding: 0 5px 0 0;
+              }
+
+              &:last-child {
+                padding: 0 0 0 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

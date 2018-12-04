@@ -1,0 +1,112 @@
+.countdown {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 85px 20px;
+  z-index: 5;
+
+  @include mq($min-width: 992px) {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+
+  &__title {
+    font-size: 26px;
+    color: $color-white;
+    text-align: center;
+    line-height: 1.4;
+
+    @include mq($min-width: 992px) {
+      text-align: left;
+      font-size: 34px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.countdown-left {
+  width: 100%;
+  z-index: 6;
+
+  .countdown__button {
+    display: none;
+  }
+
+  @include mq($min-width: 992px) {
+    width: 50%;
+
+    .countdown__button {
+      display: block;
+    }
+  }
+}
+
+.countdown-right {
+  width: 100%;
+  z-index: 6;
+
+  .countdown__button {
+    text-align: center;
+
+    a {
+      margin: 0 auto;
+    }
+  }
+
+  @include mq($min-width: 992px) {
+    width: 50%;
+
+    .countdown__button {
+      display: none;
+    }
+  }
+}
+
+.countdown-timer {
+  width: 100%;
+  max-width: 550px;
+  margin: 40px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+
+  @include mq($min-width: 992px) {
+    margin: 0 auto;
+  }
+
+  &__digit {
+    background-color: $color-white;
+    font-size: 37px;
+    padding: 45px 30px 40px;
+    line-height: 1;
+    border-radius: 8px;
+    color: $color-darkblue;
+
+    @include mq($min-width: 992px) {
+      font-size: 50px;
+      font-family: $medium;
+      padding: 50px 30px 45px;
+    }
+  }
+
+  &__separator {
+    font-size: 25px;
+    font-family: $bold;
+    color: $color-white;
+
+    @include mq($min-width: 992px) {
+      font-size: 35px;
+    }
+  }
+}

@@ -1,0 +1,229 @@
+.products-table-2 {
+  .content-container {
+    padding: 85px 20px;
+  }
+}
+
+.products-table-2-wrapper {
+  margin: 25px 0;
+  position: relative;
+
+  .slider-arrow {
+    position: absolute;
+    top: 40px;
+
+    &--next {
+      right: 20px;
+    }
+
+    &--prev {
+      left: 20px;
+    }
+
+    @include mq($min-width: 600px) {
+      &--next {
+        right: 100px;
+      }
+
+      &--prev {
+        left: 100px;
+      }
+    }
+
+    @include mq($min-width: 768px) {
+      &--next {
+        right: 200px;
+      }
+
+      &--prev {
+        left: 200px;
+      }
+    }
+  }
+
+  .slick-dots {
+    position: absolute;
+    bottom: 0;
+
+    li {
+      width: 5px;
+      height: 5px;
+
+      button {
+        width: 5px;
+        height: 5px;
+
+        &::before {
+          font-size: 10px;
+          width: 5px;
+          height: 5px;
+        }
+      }
+    }
+  }
+
+  .products-table-product {
+    margin-bottom: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+
+    @include mq($min-width: 992px) {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      opacity: 1;
+      margin-bottom: 20px;
+
+      &:hover {
+        // opacity: 1;
+
+        // ~ div {
+        //   opacity: 0.3;
+        // }
+
+        .products-table-product__buttons {
+          opacity: 1;
+        }
+      }
+    }
+
+    &__image {
+      width: 80px;
+      height: 80px;
+      background-size: 80px 80px;
+      background-position: center center;
+      background-repeat: no-repeat;
+      margin: 0 auto 50px;
+      position: relative;
+
+      @include mq($min-width: 992px) {
+        margin: 0;
+        margin-right: 15px;
+      }
+
+      &__name {
+        text-align: center;
+
+        h3 {
+          text-align: center;
+          font-size: 15px;
+          color: $color-darkblue;
+          padding-top: 75px;
+
+          b {
+            font-family: $bold;
+          }
+        }
+      }
+    }
+
+    &__warranty-icon {
+      width: 70px;
+      height: 70px;
+      background-size: 70px 70px;
+      background-position: center center;
+    }
+
+    &__badges {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      margin-bottom: 30px;
+
+      @include mq($min-width: 992px) {
+        margin-right: 10px;
+      }
+
+      &__badge {
+        width: 70px;
+        height: 70px;
+        background-size: 70px 70px;
+        background-position: center center;
+        margin: 5px;
+      }
+
+      @include mq($min-width: 992px) {
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+      }
+    }
+
+    &__buttons {
+      text-align: center;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+
+      a {
+        button {
+          font-size: 14px !important;
+        }
+      }
+
+      @include mq($min-width: 575px) {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        transition: 0.5s;
+
+        a {
+          &:first-child {
+            margin-right: 20px;
+
+            @include mq($min-width: 992px) {
+              margin-right: 10px;
+            }
+          }
+
+          @include mq($min-width: 992px) {
+            margin-top: 13px;
+          }
+
+          button {
+            font-size: 11px !important;
+          }
+        }
+      }
+
+      @include mq($min-width: 992px) {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.product-hovered {
+  opacity: 0.3 !important;
+}

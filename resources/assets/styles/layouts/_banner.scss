@@ -1,0 +1,485 @@
+.banner {
+  color: $color-white;
+  text-align: center;
+  height: 100vh;
+  max-height: 650px;
+  position: relative;
+  background-color: $color-darkblue;
+  overflow: hidden;
+
+  .banner-moon {
+    position: absolute;
+    top: -110px;
+    left: -110px;
+
+    @include mq($min-width: 992px) {
+      top: 4%;
+      left: 4%;
+    }
+
+    &__moon {
+      width: 300px;
+      height: 300px;
+      background-image: url(#{$images_dir}ksiezyc.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  .villages {
+    width: 2500px;
+    height: 415px;
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+
+    .village {
+      width: 2500px;
+      height: 415px;
+      background-size: 2500px 415px;
+      position: absolute;
+    }
+
+    .village-1 {
+      background-image: url(#{$images_dir}00.png);
+    }
+
+    .village-2 {
+      background-image: url(#{$images_dir}01.png);
+    }
+
+    .village-3 {
+      background-image: url(#{$images_dir}02.png);
+    }
+
+    .village-4 {
+      background-image: url(#{$images_dir}03.png);
+    }
+
+    .village-5 {
+      background-image: url(#{$images_dir}04.png);
+    }
+  }
+
+  .waves {
+    width: 2500px;
+    height: 121px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+
+    .wave {
+      width: 2500px;
+      height: 121px;
+      position: absolute;
+      background-repeat: repeat-x;
+      background-size: 1400px 121px;
+    }
+
+    .wave-1 {
+      background-image: url(#{$images_dir}falka-3.png);
+      -webkit-animation: wave-1 4s linear infinite;
+      animation: wave-1 4s linear infinite;
+    }
+
+    .wave-2 {
+      background-image: url(#{$images_dir}falka-2.png);
+      -webkit-animation: wave-2 8s linear infinite;
+      animation: wave-2 8s linear infinite;
+    }
+  }
+
+  &--home {
+    &:first-child {
+      background-image: url(#{$images_dir}niebo_gora.png);
+
+      .scene {
+        display: none;
+      }
+
+      .villages {
+        display: none;
+      }
+
+      .waves {
+        display: none;
+      }
+    }
+
+    &:nth-child(2) {
+      background-image: url(#{$images_dir}niebo_dol.png);
+
+      .banner-moon {
+        display: none;
+      }
+    }
+  }
+
+  &--about {
+    background-image: url(#{$images_dir}niebo_gora.png);
+    padding-top: 100px;
+  }
+
+  @include mq($min-width: 992px) {
+    text-align: left;
+    padding-top: 62px;
+  }
+
+  .content-container {
+    padding: 20px 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    &--slick {
+      position: relative;
+
+      .slider-arrow {
+        bottom: -50px;
+
+        &--next {
+          right: 20px;
+        }
+
+        &--prev {
+          left: 20px;
+        }
+
+        @include mq($min-width: 575px) {
+          &--next {
+            left: 80px;
+          }
+
+          &--prev {
+            left: 20px;
+          }
+        }
+      }
+
+      .slick-dots {
+        position: absolute;
+        bottom: -30px;
+        width: auto;
+        left: 50%;
+        transform: translate(-50%);
+
+        @include mq($min-width: 575px) {
+          bottom: 21px;
+          left: 150px;
+          -webkit-transform: translateX(0);
+          transform: translateX(0);
+          width: auto;
+        }
+
+        li {
+          width: 5px;
+          height: 5px;
+
+          button {
+            width: 5px;
+            height: 5px;
+
+            &::before {
+              font-size: 10px;
+              width: 5px;
+              height: 5px;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include mq($min-width: 575px) {
+    .content-container {
+      &--slick {
+        .slick-arrow {
+          bottom: 0;
+        }
+      }
+    }
+  }
+
+  @include mq($min-width: 992px) {
+    .content-container {
+      padding: 170px 20px 0 20px;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+
+      &--slick {
+        padding: 30px 20px 0 20px;
+
+        .slider-arrow {
+          bottom: 0;
+
+          &--next {
+            left: 80px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.content-container-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: center;
+
+  &__text {
+    width: 100% !important;
+    padding-top: 20px;
+    margin-bottom: 25px;
+
+    h2 {
+      font-family: $regular;
+      text-transform: uppercase;
+
+      b {
+        font-family: $bold;
+      }
+
+      @include mq($min-width: 992px) {
+        font-size: 36px;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    text-align: right;
+
+    img {
+      margin: 0 auto;
+      max-height: 300px;
+      width: auto;
+    }
+  }
+
+  @include mq($min-width: 575px) {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+
+    &__text {
+      width: 40% !important;
+      text-align: left;
+      margin-bottom: 0;
+      padding-top: 100px;
+    }
+
+    &__image {
+      width: 60%;
+
+      img {
+        max-height: inherit;
+        height: 100%;
+        width: auto;
+      }
+    }
+  }
+}
+
+.banner-text-content {
+  z-index: 10;
+
+  &__title {
+    margin-bottom: 20px;
+
+    h1 {
+      text-transform: uppercase;
+      font-family: $regular;
+
+      b {
+        font-family: $bold;
+      }
+
+      @include mq($min-width: 992px) {
+        font-size: 36px;
+      }
+    }
+  }
+
+  &__text {
+    p {
+      font-size: 13px;
+      line-height: 1.5;
+
+      @include mq($min-width: 992px) {
+        font-size: 15px;
+      }
+    }
+  }
+
+  &__buttons {
+    margin-top: 15px;
+
+    .btn {
+      &:first-child {
+        margin-right: 15px;
+      }
+    }
+  }
+
+  @include mq($min-width: 992px) {
+    width: 50%;
+  }
+}
+
+.banner-product-content {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+
+  @include mq($min-width: 992px) {
+    top: 100px;
+    right: 0;
+    bottom: auto;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  &--audio {
+    &__audio {
+      background-image: url(#{$images_dir}PLAY.png);
+      background-size: 200px 200px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      width: 500px;
+      height: 400px;
+
+      @include mq($min-width: 992px) {
+        width: 600px;
+        height: 480px;
+      }
+    }
+  }
+
+  &--product {
+    &__badge {
+      position: absolute;
+      // background-image: url(#{$images_dir}badge.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+      width: 100px;
+      height: 100px;
+      margin: 80px 325px 410px;
+
+      @include mq($min-width: 992px) {
+        width: 150px;
+        height: 150px;
+        margin: 30px 410px 410px;
+      }
+    }
+
+    &__product {
+      // background-image: url(#{$images_dir}produkty.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+      width: 500px;
+      height: 400px;
+
+      @include mq($min-width: 992px) {
+        width: 600px;
+        height: 480px;
+      }
+    }
+  }
+
+  &--video {
+    &__video {
+      width: 500px;
+      height: 300px;
+      background-color: red;
+      border-radius: 25px;
+      margin-top: 50px;
+      position: relative;
+
+      @include mq($min-width: 992px) {
+        width: 600px;
+        height: 380px;
+      }
+    }
+  }
+
+  &--image {
+    &__image {
+      width: 500px;
+      height: 300px;
+      background-color: red;
+      border-radius: 25px;
+      margin-top: 50px;
+
+      @include mq($min-width: 992px) {
+        width: 600px;
+        height: 380px;
+      }
+    }
+  }
+}
+
+@-webkit-keyframes wave-1 {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 1400px 0;
+  }
+}
+
+@keyframes wave-1 {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 1400px 0;
+  }
+}
+
+@-webkit-keyframes wave-2 {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: -1400px 0;
+  }
+}
+
+@keyframes wave-2 {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: -1400px 0;
+  }
+}

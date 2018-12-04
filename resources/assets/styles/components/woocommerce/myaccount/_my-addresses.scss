@@ -1,0 +1,19 @@
+.my-addresses {
+  &__address {
+    padding: 40px 0;
+    text-align: center;
+
+    @include mq($min-width: 768px) {
+      text-align: left;
+    }
+
+    &:nth-child(2) {
+      border-bottom: 1px solid $color-hairline;
+    }
+  }
+}
+
+.my-address-content {
+  margin-bottom: 30px;
+  line-height: 3;
+}

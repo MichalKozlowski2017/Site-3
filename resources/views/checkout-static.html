@@ -1,0 +1,216 @@
+<form class="checkout">
+  <div class="content-container">
+    <div class="cart-header">!!!!!!</div>
+    <div class="white-container white-container--transparent">
+      <div class="content-box checkout-summary">
+        <h1 class="content-box__title">Kod rabatowy</h1>
+        <div class="checkout-summary__voucher" id="placeholder">
+          <input class="checkout-summary__input" type="text">
+          <a href="#" class="btn btn--yellow">
+            <button type="submit" form="placeholder">Zastosuj kupon</button>
+          </a>
+        </div>
+        <h1 class="content-box__title">Twoje zamówienie</h1>
+        <div class="checkout-summary__labels">
+          <p>Produkt</p>
+          <p>Cena</p>
+          <p>Wysyłka</p>
+          <p>Suma</p>
+        </div>
+        <div class="checkout-summary__item">
+          <p>Leniwiec E-zzy, Ilość: <span>1</span></p>
+          <p>399,00 PLN</p>
+          <p>gratis</p>
+          <p>598,00 PLN</p>
+        </div>
+        <div class="checkout-summary__item">
+          <p>Ptaszek Whisbird, Ilość: <span>1</span></p>
+          <p>119,00 PLN</p>
+          <p></p>
+          <p></p>
+        </div>
+        <div class="checkout-summary__total-price">
+          <p>598, 00 PLN</p>
+        </div>
+      </div>
+      <div class="checkout__flex-container">
+        <div class="checkout__left">
+          <div class="content-box">
+            <h1 class="content-box__title">Szczegóły płatności</h1>
+            <div class="checkout-payment-details" action="">
+              <div class="checkout-payment-details__row">
+                <p class="form-element">
+                  <label for="name">
+                    Imię
+                    <span class="required">*</span>
+                  </label>
+                  <input type="text" name="text">
+                </p>
+                <p class="form-element">
+                  <label for="surname">
+                    Nazwisko
+                    <span class="required">*</span>
+                  </label>
+                  <input type="text" name="surname">
+                </p>
+              </div>
+              <div class="checkout-payment-details__row">
+                <p class="form-element">
+                  <label for="company-name">
+                    Nazwa firmy (opcjonalnie)
+                  </label>
+                  <input type="text" name="company-name">
+                </p>
+                <p class="form-element">
+                  <label for="country">
+                    Kraj
+                    <span class="required">*</span>
+                  </label>
+                  <input type="text" name="country">
+                </p>
+              </div>
+              <div class="checkout-payment-details__row">
+                <p class="form-element">
+                  <label for="zip">
+                    Kod pocztowy
+                    <span class="required">*</span>
+                  </label>
+                  <input type="text" name="zip">
+                </p>
+                <p class="form-element">
+                  <label for="city">
+                    Miasto
+                    <span class="required">*</span>
+                  </label>
+                  <input type="text" name="city">
+                </p>
+              </div>
+              <div class="checkout-payment-details__row">
+                <p class="form-element">
+                  <label for="address-street">
+                    Ulica
+                    <span class="required">*</span>
+                  </label>
+                  <input type="text" name="address-street">
+                </p>
+                <p class="form-element">
+                  <label for="street-extra">
+                  </label>
+                  <input type="text" name="street-extra" placeholder="Ciąg dalszy adresu (opcjonalnie">
+                </p>
+              </div>
+              <div class="checkout-payment-details__row">
+                <p class="form-element">
+                  <label for="phone">
+                    Telefon
+                    <span class="required">*</span>
+                  </label>
+                  <input type="text" name="phone">
+                </p>
+                <p class="form-element">
+                  <label for="email">
+                    Adres e-mail
+                    <span class="required">*</span>
+                  </label>
+                  <input type="text" name="email">
+                </p>
+              </div>
+              <p class="form-element form-element--checkbox">
+                <input type="checkbox" name="same-address">
+                <span class="styled-checkbox"></span>
+                <label for="same-address">
+                  Adres dostawy jest taki sam, jak adres rachunku
+                </label>
+              </p>
+              <p class="form-element">
+                <label for="additional-info">
+                  Uwagi do zamówienia (opcjonalne)
+                  <span class="required">*</span>
+                </label>
+                <input type="text" name="additional-info">
+              </p>
+            </div>
+            <p class="form-element form-element--required">
+              <span class="required">*</span>pola obowiązkowe
+            </p>
+          </div>
+        </div>
+        <div class="checkout__right">
+          <div class="content-box content-box--narrow">
+            <h1 class="content-box__title">metoda płatności</h1>
+            <div class="cart-delivery">
+              <ul class="cart-list">
+                <li>
+                  <label class="delivery-option" for="payu">
+                    <input class="delivery-option__default-input" type="radio" id="payu" name="delivery" value="" checked="checked">
+                    <span class="delivery-option__styled-input"></span>
+                    <p class="delivery-option__name">
+                      PayU
+                    </p>
+                    <div class="delivery-option__logo">
+                      <img src="//localhost:3000/wp-content/themes/--nazwa-firmy--/dist/images/payment_method_01.jpg" alt="">
+                    </div>
+                  </label>
+                </li>
+                <li>
+                  <label class="delivery-option" for="paypal">
+                    <input class="delivery-option__default-input" type="radio" id="paypal" name="delivery" value="" checked="checked">
+                    <span class="delivery-option__styled-input"></span>
+                    <p class="delivery-option__name">
+                      PayPal
+                    </p>
+                    <div class="delivery-option__logo">
+                      <img src="//localhost:3000/wp-content/themes/--nazwa-firmy--/dist/images/payment_method_02.jpg" alt="">  
+                    </div>
+                  </label>  
+                </li>
+                <li>
+                  <label class="delivery-option" for="payline">
+                    <input class="delivery-option__default-input" type="radio" id="payline" name="delivery" value="" checked="checked">
+                    <span class="delivery-option__styled-input"></span>
+                    <p class="delivery-option__name">
+                      PayLine
+                    </p>
+                    <div class="delivery-option__logo">
+                      <img src="//localhost:3000/wp-content/themes/--nazwa-firmy--/dist/images/payment_method_03.jpg" alt="">
+                    </div>
+                  </label>
+                </li>
+                <li>
+                  <label class="delivery-option" for="dhl">
+                    <input class="delivery-option__default-input" type="radio" id="dhl" name="delivery" value="" checked="checked">
+                    <span class="delivery-option__styled-input"></span>
+                    <p class="delivery-option__name">
+                      Przelew tradycyjny
+                    </p>
+                    <div class="delivery-option__logo">
+                    </div>
+                  </label>
+                </li>
+                <li>
+                  <label class="delivery-option" for="cod">
+                    <input class="delivery-option__default-input" type="radio" id="cod" name="delivery" value="" checked="checked">
+                    <span class="delivery-option__styled-input"></span>
+                    <p class="delivery-option__name">
+                      Za pobraniem
+                    </p>
+                    <div class="delivery-option__logo">
+                    </div>
+                  </label>
+                </li>
+              </ul>
+              <p class="cart-delivery__address">
+                Twoje dane osobowe będą użyte do przetworzenia twojego zamówienia, 
+                obsługi twojej wizyty na naszej stronie oraz dla innych celów o których mówi 
+                nasza <a href="#">polityka prywatności</a>.
+              </p>
+            </div>
+            <a href="#" class="btn btn-yellow">
+              <button type="submit" form="">Płacę i kupuję</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

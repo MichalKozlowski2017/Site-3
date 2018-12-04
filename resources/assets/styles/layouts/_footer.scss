@@ -1,0 +1,42 @@
+.homepage-footer {
+  background-image: url(#{$images_dir}niebo_dol.png);
+  position: relative;
+  background-color: $color-darkblue;
+  padding-bottom: 100px;
+
+  .content-container {
+    z-index: 5;
+  }
+}
+
+.scene {
+  position: absolute !important;
+  // top: 100px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  height: 700px;
+  width: 2800px;
+  z-index: 0;
+
+  .trees-1 {
+    position: absolute;
+    bottom: 0;
+    height: 700px;
+    width: 2800px;
+    background-image: url(#{$images_dir}drzewa_1_plan.png);
+    background-repeat: repeat-x;
+    background-position: bottom center;
+    z-index: 2;
+  }
+
+  .trees-2 {
+    position: absolute;
+    bottom: 0;
+    height: 700px;
+    width: 2800px;
+    background-image: url(#{$images_dir}drzewa_2_plan.png);
+    background-repeat: repeat-x;
+    background-position: bottom center;
+    z-index: 1;
+  }
+}

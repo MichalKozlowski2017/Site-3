@@ -1,0 +1,213 @@
+.products-table {
+  padding: 40px 20px;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+
+  .content-container {
+    display: block;
+  }
+
+  .products-table-wrapper {
+    border-radius: 20px;
+    margin-bottom: 160px;
+    background-color: $color-white;
+    position: relative;
+    margin-left: 0;
+    margin-right: 0;
+
+    @include mq($min-width: 1050px) {
+      margin-left: -30px;
+      margin-right: -30px;
+    }
+
+    &__footer {
+      background-color: $color-pink;
+      color: $color-white;
+      text-align: center;
+      padding: 15px;
+      font-family: $medium;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+  }
+
+  .products-table-wrapper-products-list {
+    padding-bottom: 0 !important;
+    position: relative;
+    text-align: center;
+    width: 100%;
+
+    &__image {
+      position: absolute;
+      width: 100px;
+      height: 120px;
+      top: -140px;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      // background-image: url(#{$images_dir}mis.png);
+      background-size: contain;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        padding: 15px 0;
+        height: 20px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        padding-left: 30px;
+
+        @include mq($min-width: 768px) {
+          padding-left: 0;
+        }
+
+        &:nth-child(even) {
+          background-color: #f0f4fa;
+        }
+
+        &:first-child {
+          padding: 70px 0 15px 0;
+          font-family: $medium;
+          border-bottom: 1px solid #e2eaf5;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          padding-left: 0 !important;
+
+          @include mq($min-width: 768px) {
+            padding: 25px 0;
+          }
+        }
+      }
+    }
+
+    &:first-child {
+      ul {
+        li {
+          padding-left: 30px;
+        }
+      }
+    }
+
+    &__buttons {
+      position: absolute;
+      width: 100%;
+      bottom: -130px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -ms-flex-pack: distribute;
+      justify-content: space-around;
+
+      .btn {
+        button {
+          padding: 10px 50px;
+        }
+      }
+
+      @include mq($min-width: 768px) {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        bottom: -160px;
+      }
+    }
+
+    &__tick,
+    &__cross {
+      width: 18px;
+      height: 18px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin: 0 30px 0 0;
+
+      @include mq($min-width: 768px) {
+        margin: 0 auto;
+      }
+    }
+
+    &__tick {
+      background-image: url(#{$images_dir}tick.png);
+    }
+
+    &__cross {
+      background-image: url(#{$images_dir}cross.png);
+    }
+  }
+
+  .products-table-wrapper-products {
+    display: none;
+    width: 100%;
+
+    @include mq($min-width: 768px) {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+    }
+
+    &__desc {
+      text-align: left;
+      width: 100%;
+      min-width: 350px;
+    }
+  }
+
+  .products-table-wrapper-products-mobile {
+    display: block;
+    margin-top: 80px;
+
+    &__prev,
+    &__next {
+      left: 20px;
+      top: 50px;
+      z-index: 2;
+      cursor: pointer;
+    }
+
+    &__next {
+      left: auto;
+      right: 20px;
+    }
+
+    @include mq($min-width: 768px) {
+      display: none;
+    }
+  }
+
+  .products-table-wrapper-products-list-mobile {
+    position: relative;
+    display: none;
+    width: 100%;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+
+    &__image {
+      top: -70px;
+    }
+
+    &--active {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+.form-edit-account {
+  border-radius: 18px;
+  width: 100%;
+
+  .form-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+
+    @include mq($min-width: 575px) {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+
+      .form-column {
+        width: 50%;
+
+        &:first-child {
+          margin-right: 5px;
+        }
+
+        &:last-child {
+          margin-left: 5px;
+        }
+      }
+    }
+
+    .form-column {
+      width: 100%;
+    }
+
+    @include mq($min-width: 575px) {
+      .form-column {
+        width: 50%;
+      }
+    }
+  }
+}
+
+.form-element--submit {
+  text-align: center;
+
+  @include mq($min-width: 768px) {
+    text-align: left;
+  }
+}

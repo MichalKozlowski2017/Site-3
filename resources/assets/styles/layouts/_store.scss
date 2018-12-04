@@ -1,0 +1,516 @@
+.store-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 10px;
+  position: relative;
+  height: 450px;
+  justify-content: flex-end;
+  border-top: 1px solid $color-borders;
+
+  &--no-border {
+    border: none !important;
+  }
+
+  &:first-child {
+    border-top: none;
+  }
+
+  &__on-offer {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 45px;
+    height: 45px;
+    background-color: $color-yellow;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > p {
+      font-family: $medium;
+    }
+  }
+
+  &__image {
+    max-width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > img {
+      max-width: 100%;
+    }
+  }
+
+  &__options > * {
+    margin: 0 3px;
+  }
+
+  &__title {
+    margin-top: 20px;
+    width: 75%;
+    text-align: center;
+
+    & > p {
+      line-height: 20px;
+    }
+  }
+
+  &__price {
+    margin-top: 10px;
+    font-family: $medium;
+
+    span.line-through {
+      margin-right: 10px;
+      text-decoration: line-through;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .button {
+      // padding: 0 !important;
+    }
+
+    .wc-forward {
+      display: none !important;
+    }
+
+    button {
+      padding: 15px 20px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .btn--noborder > button {
+      color: $color-darkblue;
+      text-decoration: none;
+      font-family: $medium;
+    }
+  }
+}
+
+.store {
+  background-image: url(#{$images_dir}niebo_gora.png);
+  position: relative;
+  color: $color-darkblue;
+  font-size: 14px;
+  padding-top: 100px;
+}
+
+.store-layout {
+  flex: 1 100%;
+  display: flex;
+  flex-flow: row wrap;
+
+  & > * {
+    flex: 1 100%;
+  }
+}
+
+.store-header {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 30px;
+  border-bottom: 1px solid $color-borders;
+  flex-direction: column;
+
+  @include mq($min-width: 768px) {
+    flex-direction: row;
+  }
+
+  @include mq($min-width: 768px) {
+    padding: 0 50px;
+  }
+
+  &__delivery {
+    flex: 1 50%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 40px;
+    border-bottom: 1px solid $color-borders;
+    margin: 0 -40px;
+
+    @include mq($min-width: 768px) {
+      margin: 0;
+      border-bottom: none;
+      border-right: 1px solid $color-borders;
+      padding: 20px 0;
+    }
+
+    & p {
+      position: relative;
+
+      &::before {
+        content: '';
+        background-image: url(#{$images_dir}delivery.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        left: -65px;
+        top: 1px;
+        height: 50px;
+        width: 50px;
+      }
+    }
+  }
+
+  &__compare {
+    flex: 1 50%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    position: relative;
+
+    & > a {
+      color: $color-darkblue;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
+    & a {
+      position: relative;
+
+      &::before {
+        content: '';
+        background-image: url(#{$images_dir}compare.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        left: -45px;
+        top: 2px;
+        height: 30px;
+        width: 30px;
+      }
+    }
+  }
+}
+
+.store-sidebar {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  border-bottom: 1px solid $color-borders;
+
+  @include mq($min-width: 575px) {
+    flex-direction: row;
+  }
+
+  @include mq($min-width: 992px) {
+    max-width: calc(100% / 4);
+    border-right: 1px solid $color-borders;
+    border-bottom: none;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+
+.store-main {
+  display: flex;
+  flex-flow: row wrap;
+
+  @include mq($min-width: 992px) {
+    flex: 5 0;
+  }
+
+  .store-item {
+    @include mq($min-width: 575px) {
+      width: calc(100% / 2);
+      border-right: 1px solid $color-borders;
+
+      &:nth-child(-n+2) {
+        border-top: none;
+      }
+
+      &:nth-child(odd) {
+        border-right: 1px solid $color-borders;
+      }
+    }
+
+    @include mq($min-width: 768px) {
+      width: calc(100% / 3);
+
+      &:nth-child(-n+3) {
+        border-top: none;
+      }
+    }
+
+    @include mq($min-width: 992px) {
+      &:nth-child(3n) {
+        border-right: none;
+      }
+    }
+  }
+}
+
+.store-menu {
+  position: relative;
+  min-width: 180px;
+
+  @include mq($min-width: 575px) {
+    min-width: 450px;
+  }
+
+  @include mq($min-width: 992px) {
+    border-bottom: 1px solid $color-borders;
+    min-width: 240px;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.2s;
+    text-align: center;
+
+    @include mq($min-width: 992px) {
+      text-align: left;
+    }
+  }
+
+  &__item {
+    &:last-child {
+      padding-bottom: 20px;
+    }
+
+    @include mq($min-width: 992px) {
+      padding-left: 30px;
+    }
+  }
+
+  &__item > a {
+    padding: 10px 0;
+    display: inline-block;
+    text-decoration: none;
+    color: $color-darkblue;
+
+    @include mq($min-width: 768px) {
+      padding: 5px 0;
+    }
+  }
+
+  &__item--is-active {
+    font-family: $medium;
+  }
+
+  &__fake-checkbox {
+    display: none;
+  }
+
+  &__expand {
+    padding: 20px 35px;
+    display: block;
+    text-decoration: none;
+    color: $color-darkblue;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    text-align: center;
+    margin: 0 -20px;
+
+    @include mq($min-width: 992px) {
+      padding: 20px 50px;
+      text-align: left;
+    }
+
+    & > i {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 20%;
+    }
+  }
+
+  &__fake-checkbox:checked {
+    & ~ .store-menu__expand > i {
+      transform: rotate(180deg) translateY(50%);
+    }
+
+    & ~ .store-menu__list {
+      max-height: 250px;
+      transition: 0.2s;
+    }
+  }
+}
+
+.store-map {
+  position: relative;
+  min-height: 400px;
+  overflow: hidden;
+
+  @include mq($min-width: 992px) {
+    min-height: 450px;
+  }
+
+  &__background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    width: 100%;
+
+    & > img {
+      opacity: 0.25;
+      width: 300%;
+      transform: translateX(-33%);
+
+      @include mq($min-width: 575px) {
+        width: 180%;
+        transform: translateX(-22%);
+      }
+
+      @include mq($min-width: 992px) {
+        width: 120%;
+        transform: translateX(-8%);
+      }
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    @include mq($min-width: 992px) {
+      top: 45%;
+    }
+
+    & > h3 {
+      font-size: 32px;
+      text-transform: uppercase;
+      text-align: center;
+      font-family: $regular;
+      line-height: 42px;
+    }
+
+    strong {
+      font-family: $bold;
+    }
+
+    & > a {
+      margin-top: 50px;
+    }
+  }
+}
+
+%caret-button-styles {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 60px;
+  border-left: 1px solid $color-borders;
+  text-decoration: none;
+  color: $color-darkblue;
+}
+
+.store-footer {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 0 50px;
+  border-top: 1px solid $color-borders;
+
+  &__nav {
+    border-top: 1px solid $color-borders;
+    margin: 0 -50px;
+    display: flex;
+    justify-content: center;
+
+    & > .page-numbers {
+      @extend %caret-button-styles;
+    }
+
+    & > .page-numbers:last-of-type {
+      border-right: 1px solid $color-borders;
+    }
+  }
+
+  .items-displayed-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+
+    & > p {
+      line-height: 20px;
+    }
+
+    span {
+      font-family: $medium;
+    }
+  }
+
+  .move-up-button {
+    display: none;
+
+    @include mq($min-width: 575px) {
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+
+    & > a {
+      @extend %caret-button-styles;
+    }
+  }
+}
+
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+  background-color: transparent;
+}
+
+.woocommerce #respond input#submit:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover {
+  background-color: transparent;
+}
+
+.woocommerce #respond input#submit.added::after,
+.woocommerce a.button.added::after,
+.woocommerce button.button.added::after,
+.woocommerce input.button.added::after {
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  transform: translateY(-50%);
+}
+
+.woocommerce #respond input#submit.loading,
+.woocommerce a.button.loading,
+.woocommerce button.button.loading,
+.woocommerce input.button.loading {
+  padding-right: 14px;
+}
+
+.woocommerce #respond input#submit.loading::after,
+.woocommerce a.button.loading::after,
+.woocommerce button.button.loading::after,
+.woocommerce input.button.loading::after {
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  transform: translateY(-50%);
+}

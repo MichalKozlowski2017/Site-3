@@ -1,0 +1,58 @@
+/* Colors */
+$color-yellow: #ffd400;
+$color-blue: #7097cf;
+$color-darkblue: #002a50;
+$color-pink: #ff0060;
+$color-white: #fff;
+$color-lightgray: #f5f6f8;
+$color-hairline: #e7ebed;
+$color-section: #003867;
+$color-borders: #e5e7ec;
+$color-blue2: #006cff;
+
+/* Directories */
+$theme_dir: "/wp-content/themes/--nazwa-firmy--/";
+$images_dir: "/wp-content/themes/--nazwa-firmy--/dist/images/";
+
+/* Fonts */
+
+$bold: 'AvenirLTPro-Black',
+  serif;
+$regular: 'AvenirLTPro-Book',
+  serif;
+$medium: AvenirLTPro-Medium,
+  serif;
+
+@font-face {
+  font-family: 'AvenirLTPro-Black';
+  src: url('../fonts/webfonts/37FEC1_2_0.eot');
+  src:
+    url('../fonts/webfonts/37FEC1_2_0.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/webfonts/37FEC1_2_0.woff') format('woff'),
+    url('../fonts/webfonts/37FEC1_2_0.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AvenirLTPro-Book';
+  src: url('../fonts/webfonts/37FEC1_0_0.eot');
+  src:
+    url('../fonts/webfonts/37FEC1_0_0.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/webfonts/37FEC1_0_0.woff') format('woff'),
+    url('../fonts/webfonts/37FEC1_0_0.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AvenirLTPro-Medium';
+  src: url('../fonts/webfonts/37FEC1_1_0.eot');
+  src:
+    url('../fonts/webfonts/37FEC1_1_0.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/webfonts/37FEC1_1_0.woff') format('woff'),
+    url('../fonts/webfonts/37FEC1_1_0.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+

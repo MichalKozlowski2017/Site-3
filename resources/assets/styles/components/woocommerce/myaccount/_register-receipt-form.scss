@@ -1,0 +1,105 @@
+.register-receipt-form {
+  background-image: url(#{$images_dir}niebo_gora.png);
+  background-repeat: repeat-x;
+  background-color: $color-section;
+
+  .content-container {
+    padding: 85px 20px;
+
+    &__wrapper {
+      -webkit-box-orient: vertical !important;
+      -webkit-box-direction: normal !important;
+      -ms-flex-direction: column !important;
+      flex-direction: column !important;
+    }
+  }
+}
+
+.register-receipt-form-header {
+  background-color: $color-hairline;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 20px;
+  overflow: hidden !important;
+
+  @include mq($min-width: 992px) {
+    padding: 120px 90px 20px 90px;
+  }
+
+  @include mq($min-width: 992px) {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    overflow: hidden;
+  }
+
+  &__left {
+    width: 100%;
+
+    h2 {
+      font-family: $bold;
+      text-transform: uppercase;
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  &__right {
+    width: 100%;
+    position: relative;
+    overflow: visible;
+    padding-bottom: 200px;
+
+    .register-receipt-form-header-image {
+      position: absolute;
+      width: 390px;
+      height: 280px;
+      background-size: 390px 280px;
+      margin-top: 30px;
+      bottom: -130px;
+      left: -80px;
+
+      div {
+        width: 110px;
+        height: 110px;
+        position: absolute;
+        top: -40px;
+        right: 2px;
+        background-size: 110px 110px;
+      }
+
+      @include mq($min-width: 480px) {
+        left: 40%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+      }
+
+      @include mq($min-width: 992px) {
+        position: absolute;
+        width: 359px;
+        height: 230px;
+        background-size: 359px 230px;
+        bottom: -90px;
+        left: 0;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+
+        div {
+          width: 190px;
+          height: 190px;
+          position: absolute;
+          top: -140px;
+          right: -102px;
+          background-size: 190px 190px;
+        }
+      }
+    }
+  }
+}

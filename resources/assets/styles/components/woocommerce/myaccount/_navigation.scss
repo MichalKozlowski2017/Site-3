@@ -1,0 +1,156 @@
+.my-account-navigation {
+  padding: 0;
+  background-color: #fff;
+  margin-bottom: 20px !important;
+  border-radius: 18px !important;
+  overflow: hidden;
+
+  h2 {
+    display: none;
+    font-size: 18px;
+    font-family: $bold;
+  }
+
+  @include mq($min-width: 768px) {
+    padding: 35px;
+    overflow: visible;
+    width: 100%;
+    margin-right: 10px;
+    margin-bottom: 0 !important;
+    max-height: 339px;
+    max-width: 340px;
+
+    h2 {
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.woocommerce-MyAccount-navigation {
+  width: 100% !important;
+  float: none !important;
+
+  ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    @include mq($min-width: 768px) {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      overflow: visible;
+    }
+
+    .woocommerce-MyAccount-navigation-link {
+      position: relative;
+      width: 25%;
+      height: 65px;
+
+      @include mq($min-width: 768px) {
+        width: 100%;
+        height: auto;
+        padding: 20px 0;
+        border-bottom: 1px solid $color-hairline;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+
+      a {
+        position: absolute;
+        color: #fff;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+
+        &::after {
+          content: '';
+          width: 30px;
+          height: 30px;
+          position: absolute;
+          background-position: center center;
+          background-repeat: no-repeat;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+        }
+
+        @include mq($min-width: 768px) {
+          position: relative;
+          width: 100%;
+          height: auto;
+          text-align: left;
+          color: $color-darkblue;
+          padding: 20px 0;
+
+          &::after {
+            display: none;
+          }
+        }
+      }
+
+      &--edit-account {
+        a {
+          &::after {
+            background-image: url(#{$images_dir}edit-account.svg);
+          }
+        }
+      }
+
+      &--orders {
+        a {
+          &::after {
+            background-image: url(#{$images_dir}orders.svg);
+          }
+        }
+      }
+
+      &--edit-address {
+        a {
+          &::after {
+            background-image: url(#{$images_dir}adressess.svg);
+          }
+        }
+      }
+
+      &--customer-logout {
+        a {
+          &::after {
+            background-image: url(#{$images_dir}logout.svg);
+          }
+        }
+      }
+    }
+
+    li.is-active {
+      background-color: $color-yellow;
+
+      a {
+        color: $color-yellow;
+      }
+
+      @include mq($min-width: 768px) {
+        background-color: transparent;
+
+        a {
+          color: $color-darkblue;
+          font-family: $bold;
+        }
+      }
+    }
+  }
+}
